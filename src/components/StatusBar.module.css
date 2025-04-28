@@ -1,0 +1,45 @@
+/* src/components/StatusBar.module.css */
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  width: 100%; /* Haz que ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+}
+
+.status-bar-logo {
+  height: 30px;
+  width: auto;
+  margin-right: 12px;
+  flex-shrink: 0; /* Evita que la imagen se achique si el texto es muy largo */
+}
+
+.status-bar p {
+  margin: 0;
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.checking {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+}
+
+.installed {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.not-installed {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}

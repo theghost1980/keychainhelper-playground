@@ -1,0 +1,85 @@
+.requestContainer {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.requestContainer h3 {
+  margin-top: 0;
+  color: #007bff; /* Color temático */
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.requestContainer p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.codeSection {
+  position: relative; /* Para posicionar el botón de copiar */
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  overflow-x: scroll; /* Para manejar código largo */
+  overflow-y: scroll;
+}
+
+.codeBlock {
+  margin: 0; /* Eliminar margen por defecto de pre */
+  padding: 15px 15px 15px 20px; /* Padding interno, un poco más a la izquierda */
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; /* Fuente de código */
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #333;
+  white-space: pre-wrap; /* Envolver líneas largas */
+  word-wrap: break-word; /* Romper palabras largas */
+}
+
+.copyButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copyButton:hover {
+  background-color: #ddd;
+}
+
+.copyButton:active {
+  background-color: #ccc;
+}
+
+.responseSection {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.responseSection h4 {
+  margin: 0 0 10px 0;
+  color: #555;
+}
+
+.responseBlock {
+  margin: 0;
+  padding: 10px;
+  background-color: #e9ecef; /* Color de fondo para respuesta */
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 0.8rem;
+  color: #0056b3; /* Color para el JSON */
+}

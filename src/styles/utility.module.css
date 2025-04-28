@@ -1,0 +1,132 @@
+/* src/styles/utility.module.css */
+
+.app-container-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px; /* Añadir padding general al layout */
+}
+
+.app-content-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-container {
+  background-color: #e9f7ef;
+  border: 1px solid #d0eedc;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-container h2 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+.welcome-container ol {
+  text-align: left;
+  margin: 20px auto;
+  max-width: 600px;
+  padding-left: 20px;
+}
+
+.welcome-container li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.welcome-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.welcome-container a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el selector desplegable */
+.request-selector {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  appearance: none; /* Oculta el estilo nativo */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C197.9l-139.3%2C139.3L8.4%2C197.9c-3.1-3.1-7.9-3.1-11%2C0c-3.1%2C3.1-3.1%2C7.9%2C0%2C11l145.8%2C145.8c3.1%2C3.1%2C7.9%2C3.1%2C11%2C0l145.8-145.8c3.1-3.1%2C3.1-7.9%2C0-11C295.3%2C194.8%2C290.1%2C194.8%2C287%2C197.9z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 12px auto;
+  width: auto; /* Ancho automático */
+}
+
+.request-selector:hover {
+  border-color: #007bff;
+}
+
+.request-selector:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos de utilidades para componentes (botones, inputs, etc.) */
+.button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #eee;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding: 8px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.inputGroup label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+/* Estilo para el pre de las respuestas JSON */
+.responsePre {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 0.8rem;
+  color: #0056b3;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

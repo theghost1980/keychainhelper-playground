@@ -1,0 +1,28 @@
+# Directorios generados por npm/yarn/pnpm
+node_modules/
+
+# Directorio de build/compilación de Webpack
+dist/
+
+# Logs de npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Archivos de sistema específicos del SO
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Archivos temporales o de configuración local
+# .env # Archivos de entorno local (si los usas en la app de pruebas)
+# .env.local # Archivos de entorno local específicos
+
+# IDE-specific files
+# .vscode/
+# Similar al proyecto de librería, considera si quieres compartir settings.json o launch.json.
+
+# Archivos de cache de herramientas
+.eslintcache
+.prettiercache
+.cache/ # Cache de Webpack u otras herramientas

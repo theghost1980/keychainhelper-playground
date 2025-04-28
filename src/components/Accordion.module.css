@@ -1,0 +1,73 @@
+/* src/components/Accordion.module.css */
+
+.accordionContainer {
+  width: 100%; /* Ocupa el ancho completo de su contenedor */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px; /* Espacio entre acordeones */
+  overflow: hidden; /* Importante para que la transición de altura funcione bien */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.accordionHeader {
+  display: flex; /* Permite alinear el título y la flecha */
+  justify-content: space-between; /* Separa título y flecha */
+  align-items: center; /* Centra verticalmente */
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #f8f8f8;
+  border: none; /* Elimina borde por defecto del botón */
+  border-bottom: 1px solid #ccc; /* Borde inferior cuando está cerrado */
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  text-align: left; /* Alinea el texto a la izquierda */
+  transition: background-color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.accordionHeader:hover {
+  background-color: #eee;
+}
+
+.accordionHeader:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */ /* Opcional: brillo al enfocar */
+}
+
+/* Estilo de la flecha */
+.arrow {
+  display: block; /* Para poder aplicar transform */
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg); /* Flecha hacia abajo por defecto (cerrado) */
+  transition: transform 0.3s ease;
+  margin-left: 10px; /* Espacio entre título y flecha */
+}
+
+.arrowOpen {
+  transform: rotate(-135deg); /* Flecha hacia arriba cuando está abierto */
+  margin-top: 5px; /* Ajuste visual al rotar */
+}
+
+/* Contenedor del contenido (inicialmente oculto) */
+.accordionContent {
+  max-height: 0; /* Oculto por defecto */
+  overflow: hidden; /* Oculta contenido que desborda */
+  transition: max-height 0.3s ease; /* Transición para abrir/cerrar */
+}
+
+/* Clase para cuando el contenido está abierto */
+.contentOpen {
+  max-height: 1000px; /* O un valor suficientemente grande para que quepa el contenido */
+  /* Puedes ajustar este valor si tienes contenido muy largo */
+  border-bottom: none; /* Elimina el borde si la cabecera no debe tener borde inferior cuando está abierta */
+}
+
+.accordionBody {
+  padding: 20px; /* Padding interno para el contenido */
+  border-top: 1px solid #eee; /* Separador entre cabecera y contenido */
+}
