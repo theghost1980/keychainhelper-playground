@@ -7,7 +7,6 @@ const AddAccountTest: React.FC = () => {
   const [copyButtonText, setCopyButtonText] = useState("Copiar Código");
   const [isCodeOpen, setIsCodeOpen] = useState(false);
 
-  // El código de ejemplo para mostrar y copiar (CON ADVERTENCIAS)
   const codeSnippet = `import { KeychainHelper } from 'keychain-helper';
 
 // !!! ADVERTENCIA EXTREMA: MANEJAR CLAVES PRIVADAS DIRECTAMENTE EN UNA INTERFAZ WEB ES EXTREMADAMENTE PELIGROSO Y NO ES RECOMENDADO !!!
@@ -70,13 +69,11 @@ const handleAddAccountSafely = () => {
   };
 
   return (
-    // Retorna solo el contenido interno para el Accordion en App.tsx
     <>
       <p>
         La request `requestAddAccount` se usa para añadir una cuenta existente a
         la extensión Hive Keychain proporcionando sus claves privadas.
       </p>
-      {/* Acordeón interno para el código de ejemplo */}
       <Accordion
         title="Ver Código de Ejemplo (¡Con Advertencia!)"
         onToggle={() => setIsCodeOpen(!isCodeOpen)}
@@ -90,7 +87,6 @@ const handleAddAccountSafely = () => {
         </div>
       </Accordion>
 
-      {/* !!! SECCIÓN DE ADVERTENCIA Y RECOMENDACIONES !!! */}
       <div
         className={utilityStyles["welcome-container"]}
         style={{

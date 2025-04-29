@@ -1,4 +1,3 @@
-// src/components/requests/RemoveKeyAuthorityTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
@@ -16,12 +15,10 @@ const RemoveKeyAuthorityTest: React.FC<RemoveKeyAuthorityTestProps> = ({
   const [copyButtonText, setCopyButtonText] = useState("Copiar Código");
   const [isCodeOpen, setIsCodeOpen] = useState(false);
 
-  // Estados para los parámetros
   const [account, setAccount] = useState("");
-  const [authorizedKey, setAuthorizedKey] = useState(""); // Public key to remove
-  const [role, setRole] = useState("Posting"); // Default role
+  const [authorizedKey, setAuthorizedKey] = useState("");
+  const [role, setRole] = useState("Posting");
 
-  // Deshabilitar si Keychain no está o si falta algún campo requerido
   const isButtonDisabled =
     !isKeychainInstalled || !account || !authorizedKey || !role;
 
@@ -117,7 +114,6 @@ const handleRemoveKeyAuthority = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="removeKeyAuthAccount">
           Cuenta que Modifica Autoridad:
@@ -158,7 +154,6 @@ const handleRemoveKeyAuthority = () => {
         </select>
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}
@@ -167,7 +162,6 @@ const handleRemoveKeyAuthority = () => {
         Ejecutar Remove Key Authority
       </button>
 
-      {/* Sección de respuesta */}
       {response && (
         <div className={styles.responseSection}>
           <h4>Respuesta:</h4>

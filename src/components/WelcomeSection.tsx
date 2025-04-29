@@ -3,7 +3,6 @@ import utilityStyles from "../styles/utility.module.css";
 
 const WelcomeSection: React.FC = () => {
   return (
-    // Usamos una clase del módulo de utilidades para el contenedor
     <div className={utilityStyles["welcome-container"]}>
       <h2>Bienvenido al Hive Keychain React Test App</h2>
       <p>

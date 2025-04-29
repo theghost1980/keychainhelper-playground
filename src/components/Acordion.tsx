@@ -1,12 +1,11 @@
-// src/components/Accordion.tsx
 import React from "react";
 import styles from "./Accordion.module.css";
 
 interface AccordionProps {
-  title: string; // Título de la sección
-  children: React.ReactNode; // Contenido
-  isOpen: boolean; // <-- Estado de expansión controlado por el padre
-  onToggle: () => void; // <-- Función para alternar el estado, proporcionada por el padre
+  title: string;
+  children: React.ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
@@ -15,28 +14,21 @@ const Accordion: React.FC<AccordionProps> = ({
   isOpen,
   onToggle,
 }) => {
-  // Ya no hay estado interno 'isOpen'. Usamos la prop 'isOpen' directamente.
-
   return (
     <div className={styles.accordionContainer}>
-      {/* Cabecera clickeable que llama a la función onToggle del padre */}
       <button className={styles.accordionHeader} onClick={onToggle}>
         {title}
-        {/* La flecha visual depende de la prop 'isOpen' */}
         <span
           className={`${styles.arrow} ${isOpen ? styles.arrowOpen : ""}`}
         ></span>
       </button>
 
-      {/* Contenedor del contenido. Su visibilidad depende de la prop 'isOpen' */}
       <div
         className={`${styles.accordionContent} ${
           isOpen ? styles.contentOpen : ""
         }`}
       >
-        <div className={styles.accordionBody}>
-          {children} {/* Renderiza el contenido */}
-        </div>
+        <div className={styles.accordionBody}>{children}</div>
       </div>
     </div>
   );

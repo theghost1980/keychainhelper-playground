@@ -1,4 +1,3 @@
-// src/components/requests/BroadcastTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
@@ -16,12 +15,10 @@ const BroadcastTest: React.FC<BroadcastTestProps> = ({
   const [copyButtonText, setCopyButtonText] = useState("Copiar Código");
   const [isCodeOpen, setIsCodeOpen] = useState(false);
 
-  // Estados para los parámetros (usaremos un ejemplo de operación: seguir a un usuario)
-  const [account, setAccount] = useState(""); // Cuenta que realiza la transmisión (el seguidor)
-  const [followTarget, setFollowTarget] = useState(""); // Cuenta a seguir
-  const [keyType, setKeyType] = useState("Posting"); // 'follow' típicamente usa clave Posting
+  const [account, setAccount] = useState("");
+  const [followTarget, setFollowTarget] = useState("");
+  const [keyType, setKeyType] = useState("Posting");
 
-  // Deshabilitar si Keychain no está o si falta algún campo requerido
   const isButtonDisabled =
     !isKeychainInstalled || !account || !followTarget || !keyType;
 
@@ -35,13 +32,11 @@ const BroadcastTest: React.FC<BroadcastTestProps> = ({
       return;
     }
 
-    // --- Explicación en consola antes de construir las operaciones ---
     console.log("Constructing operations array for broadcast...");
     console.log(
       "Example operation: Following a user using custom_json 'follow'"
     );
 
-    // --- Construye el array de operaciones para una operación 'follow' ---
     const operations = [
       [
         "custom_json",
@@ -160,7 +155,6 @@ const handleBroadcast = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="broadcastAccount">Cuenta que Transmite:</label>
         <input
@@ -195,13 +189,12 @@ const handleBroadcast = () => {
           onChange={(e) => setKeyType(e.target.value)}
           className={utilityStyles.input}
         >
-          <option value="Posting">Posting</option> {/* 'follow' usa Posting */}
+          <option value="Posting">Posting</option>
           <option value="Active">Active</option>
           <option value="Memo">Memo</option>
         </select>
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}
@@ -210,7 +203,6 @@ const handleBroadcast = () => {
         Ejecutar Broadcast (Seguir)
       </button>
 
-      {/* Sección de respuesta */}
       {response && (
         <div className={styles.responseSection}>
           <h4>Respuesta:</h4>

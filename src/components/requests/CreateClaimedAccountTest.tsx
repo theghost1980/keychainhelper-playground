@@ -1,4 +1,3 @@
-// src/components/requests/CreateClaimedAccountTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
@@ -141,7 +140,6 @@ const handleCreateClaimedAccount = () => {
         previamente reclamados por la cuenta que ejecuta la request.
       </p>
 
-      {/* --- Sección Introductoria --- */}
       <div
         className={utilityStyles["welcome-container"]}
         style={{
@@ -188,7 +186,6 @@ const handleCreateClaimedAccount = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="createClaimedAccountUsername">
           Cuenta con Tickets:
@@ -273,7 +270,6 @@ const handleCreateClaimedAccount = () => {
         />
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}

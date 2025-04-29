@@ -1,4 +1,3 @@
-// src/components/requests/CreateProposalTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
@@ -143,7 +142,6 @@ const handleCreateProposal = () => {
         (DHF).
       </p>
 
-      {/* --- Sección Introductoria --- */}
       <div
         className={utilityStyles["welcome-container"]}
         style={{
@@ -188,7 +186,6 @@ const handleCreateProposal = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="createPropUsername">Cuenta Creadora:</label>
         <input
@@ -241,7 +238,7 @@ const handleCreateProposal = () => {
         <label htmlFor="createPropDailyPay">Pago Diario (HBD):</label>
         <input
           id="createPropDailyPay"
-          type="text" // Use text to allow 3 decimals easily
+          type="text"
           value={dailyPay}
           onChange={(e) => setDailyPay(e.target.value)}
           placeholder="Ej: 1.000 (3 decimales)"
@@ -253,7 +250,7 @@ const handleCreateProposal = () => {
         <label htmlFor="createPropStartDate">Fecha Inicio (YYYY-MM-DD):</label>
         <input
           id="createPropStartDate"
-          type="text" // Use text to match string format
+          type="text"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
           placeholder="Ej: 2023-01-01"
@@ -265,7 +262,7 @@ const handleCreateProposal = () => {
         <label htmlFor="createPropEndDate">Fecha Fin (YYYY-MM-DD):</label>
         <input
           id="createPropEndDate"
-          type="text" // Use text to match string format
+          type="text"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
           placeholder="Ej: 2023-12-31"
@@ -273,7 +270,6 @@ const handleCreateProposal = () => {
         />
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}

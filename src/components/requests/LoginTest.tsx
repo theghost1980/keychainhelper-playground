@@ -1,4 +1,3 @@
-// src/components/requests/LoginTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
@@ -107,7 +106,6 @@ const handleLogin = () => {
         </em>
       </p>
 
-      {/* --- Sección Introductoria --- */}
       <div
         className={utilityStyles["welcome-container"]}
         style={{
@@ -138,7 +136,6 @@ const handleLogin = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="loginUsername">Cuenta Hive:</label>
         <input
@@ -175,7 +172,6 @@ const handleLogin = () => {
         />
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}

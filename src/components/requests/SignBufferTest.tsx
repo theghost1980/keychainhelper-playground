@@ -1,5 +1,4 @@
-// src/components/requests/SignBufferTest.tsx
-import { KeychainHelper } from "keychain-helper"; // Importa solo lo necesario
+import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
 import Accordion from "../Acordion";
@@ -13,7 +12,7 @@ const SignBufferTest: React.FC<SignBufferTestProps> = ({
   isKeychainInstalled,
 }) => {
   const [response, setResponse] = useState<any>(null);
-  const [testAccount, setTestAccount] = useState<string>("theghost.tests"); // Estado local para la cuenta
+  const [testAccount, setTestAccount] = useState<string>("theghost.tests");
   const [copyButtonText, setCopyButtonText] = useState("Copiar Código");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -31,9 +30,8 @@ const SignBufferTest: React.FC<SignBufferTestProps> = ({
     }
 
     const messageToSign = "Test message: " + Date.now();
-    const keyType = "Posting"; // O "Active", "Memo"
+    const keyType = "Posting";
 
-    // La llamada a la API de Keychain
     KeychainHelper.requestSignBuffer(
       testAccount,
       messageToSign,
@@ -49,7 +47,6 @@ const SignBufferTest: React.FC<SignBufferTestProps> = ({
     );
   };
 
-  // El código de ejemplo como un string
   const codeSnippet = `import { KeychainHelper } from 'keychain-helper';
 
 // ... asumiendo estado para la respuesta (setResponse), cuenta (testAccount),
@@ -116,7 +113,6 @@ const handleSignBuffer = () => {
 
       <div className={utilityStyles.inputGroup}>
         {" "}
-        {/* Usa clase global para inputs */}
         <label htmlFor="signBufferAccount">Cuenta:</label>
         <input
           id="signBufferAccount"

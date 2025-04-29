@@ -1,4 +1,3 @@
-// src/components/requests/ConversionTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
@@ -17,9 +16,8 @@ const ConversionTest: React.FC<ConversionTestProps> = ({
   const [isCodeOpen, setIsCodeOpen] = useState(false);
 
   const [username, setUsername] = useState("");
-  const [amount, setAmount] = useState(""); // Amount as string (requires 3 decimals)
+  const [amount, setAmount] = useState("");
 
-  // Basic validation: Keychain, username, amount is not empty and looks like a number string
   const isButtonDisabled =
     !isKeychainInstalled || !username || !amount || isNaN(parseFloat(amount));
 
@@ -41,13 +39,12 @@ const ConversionTest: React.FC<ConversionTestProps> = ({
       return;
     }
 
-    // Ensure amount has 3 decimals - Keychain requires this format
     const amountWith3Decimals = parseFloat(amount).toFixed(3);
-    const collaterized = true; //true to convert HIVE to HBD. false to convert HBD to HIVE.
+    const collaterized = true;
 
     KeychainHelper.requestConversion(
       username,
-      amountWith3Decimals, // Use amount formatted to 3 decimals
+      amountWith3Decimals,
       collaterized,
       (response: any) => {
         console.log("requestConversion Response:", response);
@@ -118,7 +115,6 @@ const handleConversion = () => {
         completarse.
       </p>
 
-      {/* --- Sección de Recomendaciones/Advertencias --- */}
       <div
         className={utilityStyles["welcome-container"]}
         style={{
@@ -166,17 +162,15 @@ const handleConversion = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="conversionUsername">Cuenta:</label>
         <input
           id="conversionUsername"
-          type="text" // Use type="text" to allow input like "1.000" easily
+          type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Tu cuenta Hive"
           className={utilityStyles.input}
-          // Optional: Add a pattern or note for 3 decimals
         />
       </div>
 
@@ -192,7 +186,6 @@ const handleConversion = () => {
         />
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}

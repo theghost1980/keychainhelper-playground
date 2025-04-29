@@ -1,10 +1,6 @@
-// src/components/StatusBar.tsx
 import React from "react";
 import keychainLogo from "../assets/images/keychain-helper-logo.png";
 import styles from "./StatusBar.module.css";
-// import * as styles from "./StatusBar.module.css";
-
-console.log({ styles });
 
 interface StatusBarProps {
   isInstalled: boolean | null;

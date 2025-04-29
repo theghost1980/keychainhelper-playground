@@ -133,7 +133,6 @@ const handleAddAccountAuthority = () => {
         </div>
       </Accordion>
 
-      {/* Campos de entrada */}
       <div className={utilityStyles.inputGroup}>
         <label htmlFor="addAuthAccount">Cuenta que Otorga Autoridad:</label>
         <input
@@ -187,7 +186,6 @@ const handleAddAccountAuthority = () => {
         />
       </div>
 
-      {/* Botón para ejecutar */}
       <button
         onClick={handleRequest}
         disabled={isButtonDisabled}
@@ -196,7 +194,6 @@ const handleAddAccountAuthority = () => {
         Ejecutar Add Account Authority
       </button>
 
-      {/* Sección de respuesta */}
       {response && (
         <div className={styles.responseSection}>
           <h4>Respuesta:</h4>

@@ -16,33 +16,27 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
-      // Regla para CSS Global (archivos .css que NO terminan en .module.css)
       {
         test: /\.css$/,
-        exclude: /\.module\.css$/, // Excluye archivos que terminan en .module.css
+        exclude: /\.module\.css$/,
         use: [
-          // 'style-loader', // Usar style-loader en desarrollo
-          // O MiniCssExtractPlugin.loader en producción:
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
             : "style-loader",
           {
             loader: "css-loader",
             options: {
-              modules: false, // Asegura que CSS Modules esté desactivado para CSS global
+              modules: false,
               esModule: true,
-              importLoaders: 0, // Importante si usas PostCSS o Sass/Less después
+              importLoaders: 0,
             },
           },
         ],
       },
 
-      // Regla para CSS Modules (archivos que terminan en .module.css)
       {
-        test: /\.module\.css$/, // Solo archivos que terminan en .module.css
+        test: /\.module\.css$/,
         use: [
-          // 'style-loader', // Usar style-loader en desarrollo
-          // O MiniCssExtractPlugin.loader en producción:
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
             : "style-loader",
@@ -50,10 +44,6 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true,
-              // modules: {
-              //   localIdentName: "[name]__[local]___[hash:base64:5]", // Define cómo se generan los nombres de clase
-              // },
-              // importLoaders: 0, // Importante si usas PostCSS o Sass/Less después
             },
           },
         ],
@@ -83,11 +73,10 @@ module.exports = {
       template: "./public/index.html",
       favicon: path.resolve(__dirname, "public", "keychain-helper.ico"),
     }),
-    // Esto asegura que el plugin exista si se necesita en producción
     ...(process.env.NODE_ENV === "production"
       ? [
           new MiniCssExtractPlugin({
-            filename: "static/css/[name].[contenthash].css", // Nombra los archivos CSS de salida
+            filename: "static/css/[name].[contenthash].css",
             chunkFilename: "static/css/[id].[contenthash].css",
           }),
         ]

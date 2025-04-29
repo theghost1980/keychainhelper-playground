@@ -1,4 +1,3 @@
-// src/components/requests/EncodeMessageTest.tsx
 import { KeychainHelper } from "keychain-helper";
 import React, { useState } from "react";
 import utilityStyles from "../../styles/utility.module.css";
