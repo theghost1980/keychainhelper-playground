@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Accordion.module.css";
+import AnimatedWrapper from "./AnimatedWrapper";
 
 interface AccordionProps {
   title: string;
@@ -23,13 +24,15 @@ const Accordion: React.FC<AccordionProps> = ({
         ></span>
       </button>
 
-      <div
-        className={`${styles.accordionContent} ${
-          isOpen ? styles.contentOpen : ""
-        }`}
-      >
-        <div className={styles.accordionBody}>{children}</div>
-      </div>
+      <AnimatedWrapper animationKey={`${isOpen}`} animationType={"fade"}>
+        <div
+          className={`${styles.accordionContent} ${
+            isOpen ? styles.contentOpen : ""
+          }`}
+        >
+          <div className={styles.accordionBody}>{children}</div>
+        </div>
+      </AnimatedWrapper>
     </div>
   );
 };

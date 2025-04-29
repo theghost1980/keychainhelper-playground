@@ -1,5 +1,6 @@
 import { KeychainHelperUtils } from "keychain-helper";
 import React, { useEffect, useState } from "react";
+import AnimatedWrapper from "./components/AnimatedWrapper";
 import StatusBar from "./components/StatusBar";
 import WelcomeSection from "./components/WelcomeSection";
 import AddAccountAuthorityTest from "./components/requests/AddAccountAuthorityTest";
@@ -86,38 +87,45 @@ const App: React.FC = () => {
   };
 
   const renderContent = () => {
-    if (!selectedRequestId) {
-      return <WelcomeSection />;
-    }
+    const RequestComponent = selectedRequestId
+      ? requestComponentMap[selectedRequestId]
+      : null;
 
-    const RequestComponent = requestComponentMap[selectedRequestId];
-
-    if (!RequestComponent) {
-      return <p>Error: Request no encontrada.</p>;
-    }
-    return <RequestComponent isKeychainInstalled={isInstalled} />;
+    return (
+      <AnimatedWrapper
+        animationKey={selectedRequestId || "welcome"}
+        animationType={"fade"}
+      >
+        {RequestComponent ? (
+          <RequestComponent isKeychainInstalled={isInstalled} />
+        ) : (
+          <WelcomeSection />
+        )}
+      </AnimatedWrapper>
+    );
   };
 
   return (
     <div className={utilityStyles["app-container-layout"]}>
-      <StatusBar isInstalled={isInstalled} />
+      <div className={utilityStyles["app-top-container"]}>
+        <StatusBar isInstalled={isInstalled} />
+        <>
+          <label htmlFor="request-selector">Selecciona una Request:</label>
+          <select
+            id="request-selector"
+            className={utilityStyles["request-selector"]}
+            value={selectedRequestId || ""}
+            onChange={handleSelectChange}
+          >
+            <option value="">--- Selecciona una Request ---</option>
 
-      <div>
-        <label htmlFor="request-selector">Selecciona una Request:</label>
-        <select
-          id="request-selector"
-          className={utilityStyles["request-selector"]}
-          value={selectedRequestId || ""}
-          onChange={handleSelectChange}
-        >
-          <option value="">--- Selecciona una Request ---</option>
-
-          {requestOptions.map((req) => (
-            <option key={req.id} value={req.id}>
-              {req.name}
-            </option>
-          ))}
-        </select>
+            {requestOptions.map((req) => (
+              <option key={req.id} value={req.id}>
+                {req.name}
+              </option>
+            ))}
+          </select>
+        </>
       </div>
 
       <div className={utilityStyles["app-content-container"]}>
