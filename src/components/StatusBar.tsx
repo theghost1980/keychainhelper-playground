@@ -1,5 +1,6 @@
 import React from "react";
 import keychainLogo from "../assets/images/keychain-helper-logo.png";
+import AnimatedWrapper from "./AnimatedWrapper";
 import styles from "./StatusBar.module.css";
 
 interface StatusBarProps {
@@ -19,14 +20,19 @@ const StatusBar: React.FC<StatusBarProps> = ({ isInstalled }) => {
   }
 
   return (
-    <div className={`${styles["status-bar"]} ${statusClass}`}>
-      <img
-        src={keychainLogo}
-        alt="KeychainHelper Logo"
-        className={styles["status-bar-logo"]}
-      />
-      <p className={styles["status-bar-p"]}>{message}</p>{" "}
-    </div>
+    <AnimatedWrapper
+      animationKey={`fade-${isInstalled}`}
+      animationType={"zoom"}
+    >
+      <div className={`${styles["status-bar"]} ${statusClass}`}>
+        <img
+          src={keychainLogo}
+          alt="KeychainHelper Logo"
+          className={styles["status-bar-logo"]}
+        />
+        <p className={styles["status-bar-p"]}>{message}</p>{" "}
+      </div>
+    </AnimatedWrapper>
   );
 };
 
