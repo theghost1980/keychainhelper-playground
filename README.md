@@ -1,6 +1,19 @@
 # keychainhelper-playground
 
-A webpack frontend, using typescript to serve as practical documentation for KeychainHelper
+A webpack frontend, using typescript to serve as practical documentation for [KeychainHelper](https://www.npmjs.com/package/keychain-helper)
+
+To use keychain-helper.
+Using Node:
+
+```bash
+npm i keychain-helper
+```
+
+Using Yarn:
+
+```
+yard add keychain-helper
+```
 
 ---
 
